@@ -23,27 +23,27 @@ class ResiduoRepository {
         .orderBy('name')
         .snapshots()
         .map((result) {
-        final List<Residuos> residuos = <Residuos>[];
-        result.docs.forEach((doc) {
-          final data = doc.data();
-          var date;
-          try{
-            date = (data['date'] as Timestamp).toDate();
-          }catch(exception){}
-          residuos.add(Residuos(
-            id: doc.id,
-            name: data['name'],
-            size: data['size'],
-            solution: data['solution'],
-            date: date
-          ));
+          final List<Residuos> residuos = <Residuos>[];
+          result.docs.forEach((doc) {
+            final data = doc.data();
+            var date;
+            try{
+              date = (data['date'] as Timestamp).toDate();
+            }catch(exception){}
+            residuos.add(Residuos(
+              id: doc.id,
+              name: data['name'],
+              size: data['size'],
+              solution: data['solution'],
+              date: date
+            ));
+          });
+          return residuos;
         });
-        return residuos;
-      });
-    }catch(exception){
-      rethrow;
+      }catch(exception){
+        rethrow;
+      }
     }
-  }
 
   // Add a new residuo
   Future<Residuos> add({required String userId, required Residuos residuos}) {
