@@ -11,6 +11,8 @@ dependencies:
   firebase_core: ^2.23.0
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
 
 dev_dependencies:
   firebase_core_platform_interface: ^5.0.0

@@ -9,6 +9,8 @@ environment:
 dependencies:
   authentication_repository:
     path: packages/authentication_repository
+  database_repository:
+    path: packages/database_repository
   bloc: ^8.1.5
   equatable: ^2.0.5
   firebase_core: ^2.23.0
@@ -22,6 +24,7 @@ dependencies:
   formz: ^0.6.0
   google_fonts: ^4.0.0
   meta: ^1.7.0
+  intl: ^0.18.1
 
 dev_dependencies:
   bloc_test: ^9.1.7
